@@ -1,20 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
 
-  const { name, picture, description, minimumOrderQuantity, availableQuantity, pricePerUnit } = tool;
+  const { _id, name, picture, description, minimumOrderQuantity, availableQuantity, pricePerUnit } = tool;
+  const navigate = useNavigate();
+  const navigateToPurchasepage = id => {
+    navigate(`/tool/${_id}`);
+  }
 
   return (
-
-    <div class="card lg:max-w-lg bg-base-100 shadow-xl">
+    <div class="card grid-cols-1 lg:grid-cols-3 lg:max-w-lg bg-base-100 shadow-xl">
       <div class="card-body">
         <img src={picture} alt="screwdriver pic" />
         <h2 className='font-bold'>{name}</h2>
         <p>{description}</p>
         <p>Minimum Order Quantity: {minimumOrderQuantity}</p>
         <p> Available Quantity: {availableQuantity}</p>
-        <p>Price: {pricePerUnit}</p>
-        <button className='btn btn-primary'>Purchase{name}</button>
+        <p>Price: ${pricePerUnit}</p>
+        <button onClick={() => navigateToPurchasepage(_id)} className='btn btn-primary'>Purchase</button>
       </div>
     </div>
   );
