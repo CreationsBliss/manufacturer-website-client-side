@@ -7,7 +7,7 @@ const Dashboard = () => {
   <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
 
-<h2 className='text-4xl text-primary'>Your Awesome Dashboard</h2>
+<h2 className='text-4xl text-primary mt-5'>Your Awesome Dashboard</h2>
     <Outlet></Outlet>
     
   
