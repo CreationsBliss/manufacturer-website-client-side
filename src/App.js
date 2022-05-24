@@ -6,6 +6,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import NotFound from './Pages/NotFound/NotFound';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Login from './Pages/Authentication/Login';
+import Signup from './Pages/Authentication/Signup';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
        <Route path='/tool/:toolId' element={<Purchase></Purchase>}></Route>
        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
+       <Route path='/signup' element={<Signup></Signup>}></Route>
        <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
     </div>
