@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
   const { toolId } = useParams();
@@ -17,8 +18,33 @@ const Purchase = () => {
 
 
 
-  const handlePurchase= event =>{
+  const handlePurchase = event => {
     event.preventDefault();
+
+    const bookingOrder = {
+      productName: purchaseProduct.name,
+      productQuantity: event.target.quantity.value,
+      userEmail: user.email,
+      userName: user.displayName,
+      userPhone: event.target.phone.value,
+      userAddress: event.target.address.value,
+    }
+
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(bookingOrder)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.success){
+          toast('Order is placed')
+        }
+      })
+
   }
 
   return (
@@ -40,7 +66,7 @@ const Purchase = () => {
             <input type="text" name="quantity" placeholder="Product Quantity" class="input input-bordered w-full max-w-xs" />
             <input type="submit" value="submit" className='btn btn-primary' class="btn btn-primary w-full max-w-xs" />
           </form>
-          
+
         </div>
       </div>
     </div>
