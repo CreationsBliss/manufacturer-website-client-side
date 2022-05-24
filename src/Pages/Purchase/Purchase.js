@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
   const { toolId } = useParams();
   const [purchaseProduct, setPurchaseProduct] = useState({});
-
+  const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
     const url = `http://localhost:5000/tool/${toolId}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setPurchaseProduct(data))
-  }, [])
+  }, []);
+
+
+
+  const handlePurchase= event =>{
+    event.preventDefault();
+  }
 
   return (
     <div>
@@ -24,9 +32,9 @@ const Purchase = () => {
           <p>Available Quantity: {purchaseProduct.availableQuantity}</p>
           <p className='mb-5'>Price Per Unit: ${purchaseProduct.pricePerUnit}</p>
 
-          <form className='grid grid-cols-1 gap-3 justify-items-center'>
-            <input type="text" name="name" placeholder="User Name" class="input input-bordered w-full max-w-xs" />
-            <input type="email" name="email" placeholder="User Email" class="input input-bordered w-full max-w-xs" />
+          <form onSubmit={handlePurchase} className='grid grid-cols-1 gap-3 justify-items-center'>
+            <input type="text" name="name" disabled value={user?.displayName || ''} class="input input-bordered w-full max-w-xs" />
+            <input type="email" name="email" disabled value={user?.email || ''} class="input input-bordered w-full max-w-xs" />
             <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
             <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
             <input type="text" name="quantity" placeholder="Product Quantity" class="input input-bordered w-full max-w-xs" />

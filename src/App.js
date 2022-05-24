@@ -7,19 +7,23 @@ import NotFound from './Pages/NotFound/NotFound';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Login from './Pages/Authentication/Login';
 import Signup from './Pages/Authentication/Signup';
+import RequireAuth from './Pages/Authentication/RequireAuth';
 
 function App() {
   return (
     <div>
-     <Navbar></Navbar>
-     <Routes>
-       <Route path='/' element={<Home></Home>}></Route>
-       <Route path='/tool/:toolId' element={<Purchase></Purchase>}></Route>
-       <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
-       <Route path='/login' element={<Login></Login>}></Route>
-       <Route path='/signup' element={<Signup></Signup>}></Route>
-       <Route path='*' element={<NotFound></NotFound>}></Route>
-     </Routes>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/tool/:toolId' element={<RequireAuth>
+          <Purchase></Purchase>
+        </RequireAuth>}>
+        </Route>
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
+      </Routes>
     </div>
   );
 }
