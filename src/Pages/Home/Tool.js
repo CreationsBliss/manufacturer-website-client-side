@@ -5,7 +5,7 @@ const Tool = ({ tool }) => {
 
   const { _id, name, picture, description, minimumOrderQuantity, availableQuantity, pricePerUnit } = tool;
   const navigate = useNavigate();
-  const navigateToPurchasepage = id => {
+  const navigateToPurchasePage = id => {
     navigate(`/tool/${_id}`);
   }
 
@@ -18,7 +18,7 @@ const Tool = ({ tool }) => {
         <p>Minimum Order Quantity: {minimumOrderQuantity}</p>
         <p> Available Quantity: {availableQuantity}</p>
         <p>Price: ${pricePerUnit}</p>
-        <button onClick={() => navigateToPurchasepage(_id)} className='btn btn-primary'>Purchase</button>
+        <button onClick={() => navigateToPurchasePage(_id)} className='btn btn-primary'>Purchase</button>
       </div>
     </div>
   );
