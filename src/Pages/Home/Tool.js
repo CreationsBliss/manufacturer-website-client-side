@@ -5,8 +5,9 @@ const Tool = ({ tool }) => {
 
   const { _id, name, picture, description, minimumOrderQuantity, availableQuantity, pricePerUnit } = tool;
   const navigate = useNavigate();
-  const navigateToPurchasePage = id => {
-    navigate(`/tool/${_id}`);
+
+  const navigateToPurchasePage = (id) => {
+    navigate(`/tool/${id}`);
   }
 
   return (

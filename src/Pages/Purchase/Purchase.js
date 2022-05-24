@@ -15,7 +15,8 @@ const Purchase = () => {
 
   return (
     <div>
-      <h3>Name: {purchaseProduct.pricePerUnit}  </h3>
+      <h3>Tools ID: {toolId}  </h3>
+      <p>Tools Name: {purchaseProduct.name} </p>
     </div>
   );
 };
