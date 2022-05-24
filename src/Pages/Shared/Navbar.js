@@ -15,7 +15,10 @@ const Navbar = () => {
   const navItem = <>
     <li> <Link to='/'>Home</Link> </li>
     <li> <Link to='/myportfolio'>Portfolio</Link> </li>
-    <li> <button className='btn btn-ghost'>{user?.displayName}</button> </li>
+    {
+      user && <li> <Link to='/dashboard'>Dashboard</Link> </li>
+    }
+    <li> {user && <button className='btn btn-ghost'>{user?.displayName}</button>} </li>
     <li> {user ? <button className='btn btn-ghost' onClick={logout}>Sign Out</button> : <Link to='/login'>Login</Link>} </li>
   </>
   return (
