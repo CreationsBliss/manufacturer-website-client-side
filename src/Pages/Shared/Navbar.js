@@ -5,6 +5,7 @@ const Navbar = () => {
   const navItem = <>
     <li> <Link to='/'>Home</Link> </li>
     <li> <Link to='/myportfolio'>Portfolio</Link> </li>
+    <li> <Link to='/login'>Login</Link> </li>
   </>
   return (
     <div>
