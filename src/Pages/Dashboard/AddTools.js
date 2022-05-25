@@ -29,8 +29,10 @@ const AddTools = () => {
           const tool = {
             name: data.name,
             description: data.description,
-            price: data.price,
-            img: img
+            pricePerUnit: data.price,
+            minimumOrderQuantity: data.quantity,
+            availableQuantity: data.available,
+            picture: img
           }
           // send to database
           fetch('http://localhost:5000/tool', {
@@ -94,6 +96,38 @@ const AddTools = () => {
 
           <label class="label">
             {errors.description?.type === 'required' && <span class="label-text-alt text-error">{errors.description.message} </span>}
+          </label>
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Available Quantity</span>
+          </label>
+          <input type="text" placeholder="Available Quantity" class="input input-bordered w-full max-w-xs" {...register("available", {
+            required: {
+              value: true,
+              message: "Available Quantity is Required"
+            }
+          })} />
+
+          <label class="label">
+            {errors.available?.type === 'required' && <span class="label-text-alt text-error">{errors.available.message} </span>}
+          </label>
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Minimum Order Quantity</span>
+          </label>
+          <input type="text" placeholder="Minimum Order Quantity" class="input input-bordered w-full max-w-xs" {...register("quantity", {
+            required: {
+              value: true,
+              message: "Quantity is Required"
+            }
+          })} />
+
+          <label class="label">
+            {errors.quantity?.type === 'required' && <span class="label-text-alt text-error">{errors.quantity.message} </span>}
           </label>
         </div>
 

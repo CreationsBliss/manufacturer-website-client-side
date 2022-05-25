@@ -17,6 +17,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Authentication/RequireAdmin';
 import AddTools from './Pages/Dashboard/AddTools';
+import ManageTools from './Pages/Dashboard/ManageTools';
 
 function App() {
   return (
@@ -45,6 +46,12 @@ function App() {
           <Route path='addTool' element={
             <RequireAdmin>
               <AddTools></AddTools>
+            </RequireAdmin>
+          }>
+          </Route>
+          <Route path='manageTools' element={
+            <RequireAdmin>
+              <ManageTools></ManageTools>
             </RequireAdmin>
           }>
           </Route>
