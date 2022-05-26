@@ -18,7 +18,7 @@ const MyProfile = () => {
 
   //   const updatedUser = { education, location, phone, linkedin };
 
-  //   fetch(`http://localhost:5000/user/ `, {
+  //   fetch(`https://thawing-depths-22036.herokuapp.com/user/ `, {
   //     method: 'PUT',
   //     headers: {
   //       'content-type': 'application/json'
@@ -35,7 +35,7 @@ const MyProfile = () => {
 
   // const [newUser, setNewUser] = useState({});
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/user/${_id}`)
+  //   fetch(`https://thawing-depths-22036.herokuapp.com/user/${_id}`)
   // }, [])
 
 

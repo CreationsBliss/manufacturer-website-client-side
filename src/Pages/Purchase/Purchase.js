@@ -10,7 +10,7 @@ const Purchase = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${toolId}`;
+    const url = `https://thawing-depths-22036.herokuapp.com/tool/${toolId}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setPurchaseProduct(data))
@@ -31,7 +31,7 @@ const Purchase = () => {
       userAddress: event.target.address.value,
     }
 
-    fetch('http://localhost:5000/order', {
+    fetch('https://thawing-depths-22036.herokuapp.com/order', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

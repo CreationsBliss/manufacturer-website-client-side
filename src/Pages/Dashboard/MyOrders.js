@@ -19,7 +19,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?userEmail=${user.email}`, {
+      fetch(`https://thawing-depths-22036.herokuapp.com/order?userEmail=${user.email}`, {
         method: 'GET',
         headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyOrders = () => {
 
 
   // const handleOrderDelete = id => {
-  //   fetch(`http://localhost:5000/order/${id}`, {
+  //   fetch(`https://thawing-depths-22036.herokuapp.com/order/${id}`, {
   //     method: 'DELETE'
   //   })
   //   .then(res => res.json())

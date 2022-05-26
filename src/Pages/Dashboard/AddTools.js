@@ -9,7 +9,7 @@ const AddTools = () => {
 
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-  const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tool').then(res => res.json()));
+  const { data: tools, isLoading } = useQuery('tools', () => fetch('https://thawing-depths-22036.herokuapp.com/tool').then(res => res.json()));
 
   const imgStorageKey = "a36131b84f1846fcc7395b9a0f60b32a";
 
@@ -35,7 +35,7 @@ const AddTools = () => {
             picture: img
           }
           // send to database
-          fetch('http://localhost:5000/tool', {
+          fetch('https://thawing-depths-22036.herokuapp.com/tool', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

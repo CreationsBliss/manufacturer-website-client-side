@@ -8,7 +8,7 @@ const AddAReview = () => {
     const description = event.target.feedback.value;
     const user = { rating, description };
 
-    fetch('http://localhost:5000/review', {
+    fetch('https://thawing-depths-22036.herokuapp.com/review', {
       method: 'POST',
       headers:{
         'content-type': 'application/json'

@@ -4,7 +4,7 @@
 // const DeleteOrderModal = ({ deletingOrder }) => {
 
 //   const handleOrderDelete = id => {
-//     fetch(`http://localhost:5000/order/${id}`, {
+//     fetch(`https://thawing-depths-22036.herokuapp.com/order/${id}`, {
 //       method: 'DELETE'
 //     })
 //     .then(res => res.json())
