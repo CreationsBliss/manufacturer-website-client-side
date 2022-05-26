@@ -163,8 +163,6 @@ const AddTools = () => {
           </label>
         </div>
 
-
-
         <input className='btn btn-primary w-full max-w-xs' type="submit" value="Add" />
 
       </form>
