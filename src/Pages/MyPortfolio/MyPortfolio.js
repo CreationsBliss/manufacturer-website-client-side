@@ -2,11 +2,11 @@ import React from 'react';
 
 const MyPortfolio = () => {
   return (
-    <div>
-      <h1 className='font-bold text-5xl text-center mt-16'>My Portfolio</h1>
+    <div className='max-w-6xl mx-auto py-16 px-10'>
+      <h1 className='text-center font-bold text-4xl mb-10'>My Portfolio</h1>
 
-      <h2 className='text-4xl font-bold mt-8'>Name: Musfakur Rahman</h2>
-      <h5 className='text-2xl mt-2'>Email: procreationsbliss@gmail.com</h5>
+      <h2 className='text-xl font-bold mt-8'>Name: Musfakur Rahman</h2>
+      <h5 className='text-xl mt-2'>Email: procreationsbliss@gmail.com</h5>
       <div class="overflow-x-auto mt-16">
         <table class="table w-full">
 

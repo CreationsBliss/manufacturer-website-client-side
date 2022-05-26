@@ -16,6 +16,7 @@ const Navbar = () => {
   const navItem = <>
     <li> <Link to='/'>Home</Link> </li>
     <li> <Link to='/myportfolio'>Portfolio</Link> </li>
+    <li> <Link to='/blogs'>Blog</Link> </li>
     {
       user && <li> <Link to='/dashboard'>Dashboard</Link> </li>
     }
@@ -24,7 +25,7 @@ const Navbar = () => {
   </>
   return (
     <div>
-      <div class="navbar bg-base-100">
+      <div class="navbar bg-base-100 sm:px-5 md:px-28">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">

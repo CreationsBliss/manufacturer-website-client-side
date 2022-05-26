@@ -20,7 +20,7 @@ const ManageTools = () => {
 
   return (
     <div>
-      <h2 className='text-2xl mb-10 mt-3'>Manage Tools: {tools.length} </h2>
+      <h2 className='text-2xl font-bold my-5 mb-10 mt-3'>Manage Tools: {tools.length} </h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>

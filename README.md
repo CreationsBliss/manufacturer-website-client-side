@@ -1,8 +1,15 @@
-# Getting Started with Create React App
+# SerewD. is a tools manufacturer company
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here is the live  [link](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features & Functionalities
+
+* This is a manufacturer company
+* Here User can purchase product throug stripe payment gateway
+* An admin can manage orders 
+* An admin can delete products
+* Customer can add review
+
 
 In the project directory, you can run:
 

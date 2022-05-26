@@ -12,8 +12,8 @@ const Testimonials = () => {
   }, [])
 
   return (
-    <div className='bg-neutral'>
-      <h1 className='text-6xl font-bold text-center mb-16'>Testimonials</h1>
+    <div className='bg-neutral px-28 py-16'>
+      <h1 className='text-4xl font-bold text-center mb-16'>Testimonials</h1>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
         {
           reviews.map(review => <Testimonial key={review._id} review={review} ></Testimonial>)

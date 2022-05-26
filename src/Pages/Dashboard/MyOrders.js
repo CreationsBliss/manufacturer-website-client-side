@@ -2,13 +2,20 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+// import DeleteOrderModal from './DeleteOrderModal';
+// import OrdersRow from './OrdersRow';
 
 const MyOrders = () => {
 
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+
+
+  // const [deletingOrder, setDeletingOrder] = useState(null);
+
 
   useEffect(() => {
     if (user) {
@@ -32,7 +39,24 @@ const MyOrders = () => {
           setOrders(data);
         });
     }
-  }, [user])
+  }, [user]);
+
+
+
+
+  // const handleOrderDelete = id => {
+  //   fetch(`http://localhost:5000/order/${id}`, {
+  //     method: 'DELETE'
+  //   })
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log(data);
+  //     if(data.deletedCount){
+  //       toast.success('Order is deleted');
+  //     }
+  //   })
+  // }
+
 
   return (
     <div>
@@ -48,6 +72,7 @@ const MyOrders = () => {
               <th>Product Name</th>
               <th>Product Quantity</th>
               <th>Payment</th>
+              {/* <th>Action</th> */}
             </tr>
           </thead>
           <tbody>
@@ -66,12 +91,19 @@ const MyOrders = () => {
                     <p> Transaction Id: <span className='text-primary font-bold'> {order.transactionId} </span> </p>
                   </div>}
                 </td>
+
+                {/* <td>
+                  <label for="delete-order-modal" onClick={() => setDeletingOrder(order)} class="btn btn-error"> Delete </label>
+                </td> */}
+
               </tr>)
             }
-
           </tbody>
         </table>
       </div>
+
+      {/* {deletingOrder && <DeleteOrderModal deletingOrder={deletingOrder}></DeleteOrderModal> } */}
+
     </div>
   );
 };

@@ -64,7 +64,7 @@ const AddTools = () => {
 
   return (
     <div>
-      <h2 className='text-2xl'>Add a Tool</h2>
+      <h2 className='text-2xl font-bold my-5'>Add a Tool</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <div class="form-control w-full max-w-xs">

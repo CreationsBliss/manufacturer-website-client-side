@@ -17,8 +17,8 @@ const Home = () => {
       <BusinessSummary></BusinessSummary>
       {/* <Reviews></Reviews> */}
       <Testimonials></Testimonials>
-      <FooterTop></FooterTop>
-      <Footer></Footer>
+      {/* <FooterTop></FooterTop>
+      <Footer></Footer> */}
     </div>
   );
 };

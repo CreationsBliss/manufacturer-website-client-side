@@ -19,6 +19,10 @@ import RequireAdmin from './Pages/Authentication/RequireAdmin';
 import AddTools from './Pages/Dashboard/AddTools';
 import ManageTools from './Pages/Dashboard/ManageTools';
 import Payment from './Pages/Dashboard/Payment';
+import FooterTop from './Pages/Home/FooterTop';
+import Footer from './Pages/Home/Footer';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -45,6 +49,12 @@ function App() {
             </RequireAdmin>
           }>
           </Route>
+          <Route path='manageAllOrders' element={
+            <RequireAdmin>
+              <ManageAllOrders></ManageAllOrders>
+            </RequireAdmin>
+          }>
+          </Route>
           <Route path='addTool' element={
             <RequireAdmin>
               <AddTools></AddTools>
@@ -60,9 +70,12 @@ function App() {
         </Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <FooterTop></FooterTop>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );

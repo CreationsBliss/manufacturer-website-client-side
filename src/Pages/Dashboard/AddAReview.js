@@ -25,7 +25,7 @@ const AddAReview = () => {
 
   return (
     <div>
-      <h1 className='mb-10'>Add a Review</h1>
+      <h1 className='mb-10 text-2xl font-bold my-5'>Add a Review</h1>
       <form onSubmit={handleAddReview}>
 
         <div class="form-control w-full max-w-xs">
