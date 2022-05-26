@@ -5,6 +5,7 @@ import Footer from './Footer';
 import FooterTop from './FooterTop';
 import Reviews from './Reviews';
 import Service from './Service';
+// import Testimonials from './Testimonials';
 import Tools from './Tools';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Service></Service>
       <BusinessSummary></BusinessSummary>
       <Reviews></Reviews>
+      {/* <Testimonials></Testimonials> */}
       <FooterTop></FooterTop>
       <Footer></Footer>
     </div>

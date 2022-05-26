@@ -26,6 +26,7 @@ const Purchase = () => {
       productQuantity: event.target.quantity.value,
       userEmail: user.email,
       userName: user.displayName,
+      productPrice: event.target.price.value,
       userPhone: event.target.phone.value,
       userAddress: event.target.address.value,
     }
@@ -61,6 +62,7 @@ const Purchase = () => {
           <form onSubmit={handlePurchase} className='grid grid-cols-1 gap-3 justify-items-center'>
             <input type="text" name="name" disabled value={user?.displayName || ''} class="input input-bordered w-full max-w-xs" />
             <input type="email" name="email" disabled value={user?.email || ''} class="input input-bordered w-full max-w-xs" />
+            <input type="text" name="price" disabled value={purchaseProduct.pricePerUnit} class="input input-bordered w-full max-w-xs" />
             <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
             <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
             <input type="text" name="quantity" placeholder="Product Quantity" class="input input-bordered w-full max-w-xs" />

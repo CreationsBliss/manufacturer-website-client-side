@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import ToolRow from './ToolRow';
 
 const ManageTools = () => {
 
-  const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools', {
+  const [deletingTool, setDeletingTool] = useState(null);
+
+  const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools', {
     headers: {
       authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
@@ -17,10 +20,9 @@ const ManageTools = () => {
 
   return (
     <div>
-      <h2 className='text-2xl'>Manage Tools: {tools.length} </h2>
+      <h2 className='text-2xl mb-10 mt-3'>Manage Tools: {tools.length} </h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
-
           <thead>
             <tr>
               <th></th>
@@ -32,11 +34,14 @@ const ManageTools = () => {
           </thead>
           <tbody>
             {
-              tools.map((tool, index) => <ToolRow key={tool._id} tool={tool} index={index}></ToolRow>)
+              tools.map((tool, index) => <ToolRow key={tool._id} tool={tool} index={index} refetch={refetch} setDeletingTool={setDeletingTool}></ToolRow>)
             }
           </tbody>
         </table>
       </div>
+      {
+        deletingTool && <DeleteConfirmModal deletingTool={deletingTool}  refetch={ refetch} setDeletingTool={setDeletingTool} ></DeleteConfirmModal>
+      }
     </div>
   );
 };
